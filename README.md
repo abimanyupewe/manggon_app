@@ -10,7 +10,7 @@
 </p>
 
 > **"Manajemen Kos Putri Multi-Lokasi, Aman, dan Transparan."**  
-> *Aplikasi klien mobile resmi berbasis React Native (Expo SDK 57) yang dirancang secara khusus untuk penghuni (**Tenant / Anak Kos Putri**) dalam ekosistem properti Manggon.*
+> *Aplikasi klien mobile berbasis React Native (Expo SDK 57) yang dirancang secara khusus untuk penghuni (**Tenant / Anak Kos Putri**) dalam ekosistem properti Manggon.*
 
 ---
 
