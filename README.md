@@ -1,4 +1,4 @@
-# Manggon Mobile — Tenant Portal 🌸
+# Manggon Mobile — Tenant Portal
 
 <p align="center">
   <img src="https://img.shields.io/badge/Platform-React%20Native%20%7C%20Expo%20SDK%2057-000020?style=for-the-badge&logo=expo&logoColor=white" alt="Expo SDK 57" />
@@ -14,7 +14,7 @@
 
 ---
 
-## 📖 1. Tentang Proyek
+## 1. Tentang Proyek
 
 **Manggon Mobile** adalah aplikasi portofolio level enterprise yang menjadi jembatan komunikasi operasional antara anak kos putri, staf penjaga cabang, dan pemilik kos (*superadmin*). 
 
@@ -25,37 +25,37 @@ Proyek ini memecahkan berbagai tantangan operasional kos konvensional:
 
 ---
 
-## 🚀 2. Fitur Utama (Core Modules)
+## 2. Fitur Utama (Core Modules)
 
 Aplikasi klien mobile berfokus pada 4 modul fungsional utama bagi tenant:
 
-### 🔐 1. Force Password Change (First-Login Security)
+### 1. Force Password Change (First-Login Security)
 * Menangani alur keamanan saat anak kos pertama kali login menggunakan kredensial acak dari sistem.
 * Intersepsi respon HTTP `403` bertanda `MUST_CHANGE_PASSWORD` dengan token sementara.
 * Mengunci navigasi aplikasi pada layar rotasi kata sandi sebelum pengguna diizinkan masuk ke Beranda.
 
-### 🛡️ 2. Satpam Digital (Security Desk)
+### 2. Satpam Digital (Security Desk)
 * **Izin Pulang Malam (`late_return`):** Formulir pengajuan jam kedatangan terlambat beserta alasan operasional.
 * **Izin Tamu Menginap (`guest_visit`):** Pendataan nama tamu wanita dan estimasi durasi kunjungan.
 * **Live Status Tracking:** Memantau status persetujuan staf cabang (`Menunggu Konfirmasi`, `Disetujui`, atau `Ditolak` disertai alasan penolakan).
 
-### 💳 3. Pembayaran Mandiri (Billing & Proof Upload)
+### 3. Pembayaran Mandiri (Billing & Proof Upload)
 * Ringkasan status sewa bulan berjalan (`Lunas` / `Belum Dibayar`).
 * Menampilkan informasi rekening resmi cabang kos untuk menghindari penipuan rekening pihak ketiga.
 * Unggah bukti transfer langsung dari kamera atau galeri dengan kompresi lokal sebelum dikirim ke server.
 
-### 🛠️ 4. Sistem Tiket Keluhan (Complaints / Maintenance)
+### 4. Sistem Tiket Keluhan (Complaints / Maintenance)
 * Pelaporan kerusakan fasilitas kamar (AC, kran air, kelistrikan, fasilitas kamar mandi).
 * Lampiran foto bukti kerusakan.
-* Pemantauan progres penanganan oleh staf: `Menunggu` ➔ `Sedang Ditangani` ➔ `Selesai`.
+* Pemantauan progres penanganan oleh staf: `Menunggu` -> `Sedang Ditangani` -> `Selesai`.
 
-### 👤 5. Profil & Kontak Darurat
+### 5. Profil & Kontak Darurat
 * Rincian nomor kamar, lantai, harga sewa, dan daftar fasilitas.
 * Pembaruan data nomor ponsel dan kontak darurat (Orang Tua / Wali).
 
 ---
 
-## 🛠️ 3. Tech Stack & Ekosistem
+## 3. Tech Stack & Ekosistem
 
 Aplikasi dibangun dengan memprioritaskan performa rendering, *strict type safety*, dan arsitektur modular yang dapat diuji (*testable*):
 
@@ -75,7 +75,7 @@ Aplikasi dibangun dengan memprioritaskan performa rendering, *strict type safety
 
 ---
 
-## 🏗️ 4. Pola Arsitektur (*Feature-Based Clean Architecture*)
+## 4. Pola Arsitektur (*Feature-Based Clean Architecture*)
 
 Struktur proyek diorganisir ke dalam lapisan tanggung jawab (*layers of concerns*) yang terpisah dari komponen UI:
 
@@ -100,7 +100,7 @@ src/
 
 ---
 
-## ⚡ 5. Panduan Instalasi & Menjalankan Aplikasi
+## 5. Panduan Instalasi & Menjalankan Aplikasi
 
 ### Prasyarat:
 * [Node.js](https://nodejs.org/) LTS (v20.x atau v22.x disarankan).
@@ -142,16 +142,16 @@ src/
 
 ---
 
-## 📑 6. Referensi Dokumentasi Spesifikasi
+## 6. Referensi Dokumentasi Spesifikasi
 
 Dokumentasi lengkap dan kontrak teknis proyek tersedia di folder [`dev/`](file:///home/clara/Project/manggon_app/dev):
 
-* 📋 [Product Requirements Document (PRD)](file:///home/clara/Project/manggon_app/dev/Product%20Requirements%20Document%20%28PRD%29%20-%20Manggon.md): Visi produk, latar belakang, target persona, dan batasan fitur MVP.
-* 📐 [Software Design Document (SDD)](file:///home/clara/Project/manggon_app/dev/Software%20Design%20Document%20%28SDD%29%20-%20Manggon%20Mobile.md): Cetak biru arsitektur Clean Architecture, spesifikasi pustaka, dan alur autentikasi Sanctum.
-* 🔌 [Mobile REST API Contract (v1)](file:///home/clara/Project/manggon_app/dev/docs/MOBILE_API_CONTRACT.md): Rincian 12 endpoint API, format envelope standar, skema request/response JSON, dan definisi interface TypeScript.
+* [Product Requirements Document (PRD)](file:///home/clara/Project/manggon_app/dev/Product%20Requirements%20Document%20%28PRD%29%20-%20Manggon.md): Visi produk, latar belakang, target persona, dan batasan fitur MVP.
+* [Software Design Document (SDD)](file:///home/clara/Project/manggon_app/dev/Software%20Design%20Document%20%28SDD%29%20-%20Manggon%20Mobile.md): Cetak biru arsitektur Clean Architecture, spesifikasi pustaka, dan alur autentikasi Sanctum.
+* [Mobile REST API Contract (v1)](file:///home/clara/Project/manggon_app/dev/docs/MOBILE_API_CONTRACT.md): Rincian 12 endpoint API, format envelope standar, skema request/response JSON, dan definisi interface TypeScript.
 
 ---
 
-## ⚖️ Lisensi
+## 7. Lisensi
 
 Proyek ini dilisensikan di bawah [MIT License](file:///home/clara/Project/manggon_app/LICENSE).
