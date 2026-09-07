@@ -11,8 +11,10 @@ const getDefaultApiUrl = (): string => {
   return 'http://localhost:8000/api/v1';
 };
 
+const rawApiUrl = process.env.EXPO_PUBLIC_API_URL || getDefaultApiUrl();
+
 export const Env = {
-  API_URL: process.env.EXPO_PUBLIC_API_URL || getDefaultApiUrl(),
+  API_URL: rawApiUrl.replace(/\/+$/, ''),
   API_TIMEOUT: 15000,
   APP_NAME: 'Manggon Mobile',
   APP_VERSION: '1.0.0',
