@@ -8,13 +8,14 @@ import {
   TouchableOpacity,
   StyleSheet,
   ViewStyle,
+  StyleProp,
   TouchableOpacityProps,
 } from 'react-native';
 import { Colors, BorderRadius, Spacing, Shadows } from '../../../core/theme';
 
 export interface CardProps {
   children: React.ReactNode;
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
   onPress?: TouchableOpacityProps['onPress'];
   variant?: 'elevated' | 'outlined' | 'flat';
 }
@@ -25,19 +26,14 @@ export const Card: React.FC<CardProps> = ({
   onPress,
   variant = 'outlined',
 }) => {
-  const getCardStyle = (): ViewStyle[] => {
-    const list: ViewStyle[] = [styles.base];
-
-    if (variant === 'elevated') {
-      list.push(styles.elevated);
-    } else if (variant === 'outlined') {
-      list.push(styles.outlined);
-    } else if (variant === 'flat') {
-      list.push(styles.flat);
-    }
-
-    if (style) list.push(style);
-    return list;
+  const getCardStyle = (): StyleProp<ViewStyle> => {
+    return [
+      styles.base,
+      variant === 'elevated' && styles.elevated,
+      variant === 'outlined' && styles.outlined,
+      variant === 'flat' && styles.flat,
+      style,
+    ];
   };
 
   if (onPress) {
