@@ -360,7 +360,9 @@ export const HomeScreen: React.FC = () => {
             <View style={styles.infoTextContainer}>
               <Text style={styles.infoLabel}>Rekening Resmi Pembayaran Kos:</Text>
               <Text style={styles.infoValue}>
-                {profile?.property?.bank_account_info || 'Hubungi pengelola kos'}
+                {profile?.property?.bank_account_info
+                  ? `${profile.property.bank_account_info.bank} - ${profile.property.bank_account_info.account_number} (a.n. ${profile.property.bank_account_info.account_holder})`
+                  : 'Hubungi pengelola kos'}
               </Text>
             </View>
           </View>
@@ -428,8 +430,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   propertyMetaRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
     justifyContent: 'space-between',
     gap: Spacing.sm,
   },

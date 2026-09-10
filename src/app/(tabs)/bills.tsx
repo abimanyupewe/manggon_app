@@ -3,8 +3,13 @@
  */
 
 import React from 'react';
+import { SafeScreen } from '../../presentation/components/common';
 import { BillsScreen } from '../../presentation/screens/bills/BillsScreen';
 
 export default function BillsTabPage() {
-  return <BillsScreen />;
+  return (
+    <SafeScreen>
+      <BillsScreen />
+    </SafeScreen>
+  );
 }

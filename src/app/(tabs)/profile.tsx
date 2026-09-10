@@ -3,8 +3,13 @@
  */
 
 import React from 'react';
+import { SafeScreen } from '../../presentation/components/common';
 import { ProfileScreen } from '../../presentation/screens/profile/ProfileScreen';
 
 export default function ProfileTabPage() {
-  return <ProfileScreen />;
+  return (
+    <SafeScreen>
+      <ProfileScreen />
+    </SafeScreen>
+  );
 }

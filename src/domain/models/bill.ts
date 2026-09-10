@@ -3,6 +3,8 @@
  * Based on MOBILE_API_CONTRACT.md
  */
 
+import { BankAccountInfo } from './user';
+
 export type PaymentStatus = 'unpaid' | 'pending_verification' | 'paid' | 'rejected';
 
 export interface TenantBill {
@@ -19,7 +21,7 @@ export interface TenantBill {
   notes: string | null;
   property_name: string;
   room_number: string;
-  bank_account_info: string;
+  bank_account_info: BankAccountInfo | null;
   created_at: string;
 }
 

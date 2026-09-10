@@ -3,13 +3,19 @@
  * Based on MOBILE_API_CONTRACT.md
  */
 
+export interface BankAccountInfo {
+  bank: string;
+  account_number: string;
+  account_holder: string;
+}
+
 export interface TenantProperty {
   id: number;
   name: string;
   address: string;
   phone_number: string;
   facilities: string[];
-  bank_account_info: string;
+  bank_account_info: BankAccountInfo | null;
 }
 
 export interface TenantRoom {

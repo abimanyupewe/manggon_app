@@ -3,8 +3,13 @@
  */
 
 import React from 'react';
+import { SafeScreen } from '../../presentation/components/common';
 import { SecurityScreen } from '../../presentation/screens/security/SecurityScreen';
 
 export default function SecurityTabPage() {
-  return <SecurityScreen />;
+  return (
+    <SafeScreen>
+      <SecurityScreen />
+    </SafeScreen>
+  );
 }

@@ -2,9 +2,13 @@
  * Axios HTTP Client with Sanctum Bearer Interceptors
  */
 
-import axios, { AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
-import { Env } from '../config/env';
-import { TokenStorage } from '../../data/secure_storage/token_storage';
+import axios, {
+  AxiosInstance,
+  AxiosResponse,
+  InternalAxiosRequestConfig,
+} from "axios";
+import { TokenStorage } from "../../data/secure_storage/token_storage";
+import { Env } from "../config/env";
 
 let onUnauthorizedCallback: (() => void) | null = null;
 
@@ -16,7 +20,7 @@ export const apiClient: AxiosInstance = axios.create({
   baseURL: Env.API_URL,
   timeout: Env.API_TIMEOUT,
   headers: {
-    Accept: 'application/json',
+    Accept: "application/json",
   },
 });
 
@@ -32,7 +36,7 @@ apiClient.interceptors.request.use(
     }
     return config;
   },
-  (error) => Promise.reject(error)
+  (error) => Promise.reject(error),
 );
 
 // Response Interceptor: Handle 401 Unauthorized & Session Expired
@@ -41,8 +45,8 @@ apiClient.interceptors.response.use(
   async (error) => {
     if (axios.isAxiosError(error) && error.response?.status === 401) {
       // Don't auto-logout if the 401 was from the login endpoint itself
-      const requestUrl = error.config?.url || '';
-      if (!requestUrl.includes('/auth/login')) {
+      const requestUrl = error.config?.url || "";
+      if (!requestUrl.includes("/auth/login")) {
         await TokenStorage.clearAllTokens();
         if (onUnauthorizedCallback) {
           onUnauthorizedCallback();
@@ -50,5 +54,5 @@ apiClient.interceptors.response.use(
       }
     }
     return Promise.reject(error);
-  }
+  },
 );

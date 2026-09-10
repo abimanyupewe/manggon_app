@@ -5,11 +5,13 @@
 
 import React from 'react';
 import { Tabs } from 'expo-router';
-import { Platform } from 'react-native';
 import { Home, Receipt, ShieldCheck, Wrench, User } from 'lucide-react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Colors } from '../../core/theme';
 
 export default function TabsLayout() {
+  const insets = useSafeAreaInsets();
+
   return (
     <Tabs
       screenOptions={{
@@ -20,8 +22,8 @@ export default function TabsLayout() {
           backgroundColor: Colors.background.surface,
           borderTopColor: Colors.border.DEFAULT,
           borderTopWidth: 1,
-          height: Platform.OS === 'ios' ? 88 : 64,
-          paddingBottom: Platform.OS === 'ios' ? 28 : 10,
+          height: 56 + insets.bottom,
+          paddingBottom: insets.bottom + 4,
           paddingTop: 8,
           elevation: 4,
         },
@@ -79,3 +81,4 @@ export default function TabsLayout() {
     </Tabs>
   );
 }
+

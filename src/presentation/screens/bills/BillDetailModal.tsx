@@ -211,7 +211,11 @@ export const BillDetailModal: React.FC<BillDetailModalProps> = ({
               <CreditCard size={18} color={Colors.primary.DEFAULT} />
               <Text style={styles.bankTitle}>Rekening Resmi Pembayaran</Text>
             </View>
-            <Text style={styles.bankInfoText}>{bill.bank_account_info}</Text>
+            <Text style={styles.bankInfoText}>
+              {bill.bank_account_info
+                ? `${bill.bank_account_info.bank} - ${bill.bank_account_info.account_number} (a.n. ${bill.bank_account_info.account_holder})`
+                : 'Hubungi pengelola kos'}
+            </Text>
             <Text style={styles.bankNotice}>
               Wajib transfer ke rekening resmi di atas. Pengelola tidak bertanggung jawab atas pembayaran di luar rekening resmi.
             </Text>
